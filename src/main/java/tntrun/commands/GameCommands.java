@@ -252,7 +252,7 @@ public class GameCommands implements CommandExecutor {
 		}
 
 		// leave arena
-		else if (args[0].equalsIgnoreCase("leave")) {
+		/*else if (args[0].equalsIgnoreCase("leave")) {
 			Arena arena = plugin.amanager.getPlayerArena(player.getName());
 			if (arena != null) {
 				arena.getPlayerHandler().leavePlayer(player, Messages.playerlefttoplayer, Messages.playerlefttoothers);
@@ -260,7 +260,7 @@ public class GameCommands implements CommandExecutor {
 				Messages.sendMessage(player, Messages.playernotinarena);
 				return false;
 			}
-		}
+		}*/
 
 		// all commands
 		else if (args[0].equalsIgnoreCase("cmds")) {
