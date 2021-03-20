@@ -41,6 +41,7 @@ public class GameCommands implements CommandExecutor {
 	}
 
 	@Override
+	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (!(sender instanceof Player)) {
 			sender.sendMessage(FormattingCodesParser.parseFormattingCodes(Messages.trprefix + "&c You must be a player"));
@@ -252,7 +253,11 @@ public class GameCommands implements CommandExecutor {
 		}
 
 		// leave arena
-		/*else if (args[0].equalsIgnoreCase("leave")) {
+		else if (args[0].equalsIgnoreCase("leave")) {
+			if (!player.hasPermission("tntrun.leave")) {
+				Messages.sendMessage(player, Messages.nopermission);
+				return false;
+			}
 			Arena arena = plugin.amanager.getPlayerArena(player.getName());
 			if (arena != null) {
 				arena.getPlayerHandler().leavePlayer(player, Messages.playerlefttoplayer, Messages.playerlefttoothers);
@@ -260,7 +265,7 @@ public class GameCommands implements CommandExecutor {
 				Messages.sendMessage(player, Messages.playernotinarena);
 				return false;
 			}
-		}*/
+		}
 
 		// all commands
 		else if (args[0].equalsIgnoreCase("cmds")) {
