@@ -41,7 +41,6 @@ public class GameCommands implements CommandExecutor {
 	}
 
 	@Override
-	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if (!(sender instanceof Player)) {
 			sender.sendMessage(FormattingCodesParser.parseFormattingCodes(Messages.trprefix + "&c You must be a player"));
